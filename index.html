@@ -1,1 +1,334 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Market Minds</title></head><body style="font-family:Arial;background:#08120f;color:white;text-align:center;padding:40px"><h1 style="color:#28d67b">Market Minds</h1><p>Komunitas Crypto Trading Indonesia.</p><a href="#join">Gabung Sekarang</a><hr><h2 id="join">Join</h2><p>Telegram | Discord | Instagram | TikTok</p></body></html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Minds | Kuasai Pasar Bersama</title>
+    <!-- FontAwesome untuk Ikon Sosial Media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Skema Warna & Variabel */
+        :root {
+            --emerald-light: #34d399;
+            --emerald-main: #10b981;
+            --emerald-dark: #047857;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* --- Navbar / Header --- */
+        header {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-container img {
+            height: 40px; /* Sesuaikan ukuran logo */
+            width: auto;
+            border-radius: 5px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--emerald-main);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--emerald-main);
+        }
+
+        /* --- Hero Section (Home) --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 20px;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .hero h1 span {
+            color: var(--emerald-main);
+            text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--emerald-main);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--emerald-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+        }
+
+        /* --- General Section Style --- */
+        .section {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--emerald-main);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--emerald-main);
+            display: block;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- About Section --- */
+        .about-text {
+            text-align: center;
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: auto;
+            color: var(--text-muted);
+        }
+
+        /* --- Benefits Section --- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background-color: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+            border-color: rgba(16, 185, 129, 0.5);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--emerald-main);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .benefit-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Social Links (Join Us) Section --- */
+        .social-section {
+            background-color: var(--bg-card);
+            text-align: center;
+            border-radius: 20px;
+            padding: 60px 5%;
+            margin: 50px auto;
+            max-width: 1000px;
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.05);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            justify-content: center;
+        }
+
+        .social-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* Platform Colors */
+        .btn-telegram { background-color: #0088cc; }
+        .btn-discord { background-color: #5865F2; }
+        .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-tiktok { background-color: #000000; border: 1px solid #333; }
+
+        .social-btn:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #070b14;
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Sembunyikan menu di HP untuk kesederhanaan */
+            .logo-text { font-size: 20px; }
+            .social-links { flex-direction: column; align-items: center; }
+            .social-btn { width: 100%; max-width: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigasi -->
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo-container">
+                <span class="logo-text">Market Minds</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#benefits">Benefit</a></li>
+                <li><a href="#join">Komunitas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section (Beranda) -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Tingkatkan Strategimu, <br><span>Kuasai Pasar</span></h1>
+            <p>Bergabunglah dengan Market Minds, komunitas terdepan bagi para trader dan investor yang ingin mendominasi pasar finansial dengan analisis tajam dan strategi cerdas.</p>
+            <a href="#join" class="btn">Mulai Perjalananmu</a>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">Apa itu Market Minds?</h2>
+        <div class="about-text">
+            <p><strong>Market Minds</strong> Market Minds adalah komunitas trading dan investasi yang dibangun untuk membantu setiap anggota memahami pasar finansial dengan lebih terarah. Kami percaya bahwa kesuksesan di market bukan hanya soal mencari profit, tetapi juga membangun mindset, strategi, dan manajemen risiko yang tepat.
+Di dalam Market Minds, kamu bisa belajar mulai dari dasar hingga strategi yang lebih advanced melalui analisis market, edukasi, diskusi aktif, serta berbagi insight bersama komunitas. Baik kamu seorang pemula maupun trader berpengalaman, Market Minds menyediakan lingkungan yang suportif untuk terus berkembang dan meningkatkan kemampuan trading secara konsisten.
+
+              Bergabunglah bersama Market Minds dan tumbuh bersama komunitas yang berfokus pada edukasi, konsistensi, dan perkembangan jangka panjang dalam dunia trading.</p>
+        </div>
+    </section>
+
+    <!-- Benefit Section (Dapet Apa Aja?) -->
+    <section id="benefits" class="section">
+        <h2 class="section-title">Kenapa Bergabung Dengan Kami?</h2>
+        <div class="benefits-grid">
+            <!-- Kartu 1 -->
+            <div class="benefit-card">
+                <i class="fa-solid fa-chart-line benefit-icon"></i>
+                <h3>Analisis Harian</h3>
+                <p>Dapatkan pandangan pasar (Market Outlook) setiap hari. Kami membedah chart dan tren terkini agar kamu tidak salah arah.</p>
+            </div>
+            <!-- Kartu 2 -->
